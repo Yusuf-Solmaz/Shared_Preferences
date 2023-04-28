@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -77,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
     public void delete(View view){
         sharedPreferences.edit().remove("sharedName").apply();
         savedName.setText("Your Name Deleted!");
+    }
+
+    public void goTo2Screen(View view){
+        Intent intent = new Intent(this, Activity2.class);
+        startActivity(intent);
     }
 
 }
