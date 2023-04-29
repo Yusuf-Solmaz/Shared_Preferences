@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class Activity2 extends AppCompatActivity {
 
+    Intent intent;
     TextView textView;
     TextView timer;
     @Override
@@ -19,7 +20,7 @@ public class Activity2 extends AppCompatActivity {
         setContentView(R.layout.activity_2);
         textView=findViewById(R.id.textView3);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         String name = intent.getStringExtra("sendedName");
         textView.setText("Your Name:"+name);
 
@@ -47,5 +48,12 @@ public class Activity2 extends AppCompatActivity {
                 Toast.makeText(Activity2.this,"Time is Over!",Toast.LENGTH_LONG).show();
             }
         }.start();
+    }
+
+
+    public void goTo3thScreen(View view){
+        Intent intent1 = new Intent(this, Activity3.class);
+
+        startActivity(intent1);
     }
 }
