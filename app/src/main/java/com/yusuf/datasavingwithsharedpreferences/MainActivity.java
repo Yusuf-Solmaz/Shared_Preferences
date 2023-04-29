@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goTo2Screen(View view){
         Intent intent = new Intent(this, Activity2.class);
+        intent.putExtra("sendedName",sharedPreferences.getString("sharedName",""));
         startActivity(intent);
     }
 
